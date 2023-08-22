@@ -1,26 +1,8 @@
 {
-  "name": "parcel-jest",
+  "name": "parcelbase",
   "version": "1.0.0",
   "description": "npm install",
-  "default": "index.html",
-  "scripts": {
-    "start": "parcel index.html",
-    "build": "parcel build index.html",
-    "test": "jest --watch",
-    "test-once": "jest --verbose --coverage",
-    "cypress": "cypress open",
-    "cypress-run": "cypress run"
-  },
-  "author": "Israel Antezana R.",
-  "license": "ISC",
-  "devDependencies": {
-    "@babel/core": "^7.21.3",
-    "@babel/preset-env": "^7.20.2",
-    "babel-jest": "^29.5.0",
-    "cypress": "^12.8.1",
-    "jest": "^29.5.0",
-    "parcel": "^2.8.3"
-  },
+  "main": "cypress.config.js",
   "dependencies": {
     "abortcontroller-polyfill": "^1.7.5",
     "acorn": "^8.8.2",
@@ -40,6 +22,7 @@
     "at-least-node": "^1.0.0",
     "aws-sign2": "^0.7.0",
     "aws4": "^1.11.0",
+    "babel-jest": "^29.5.0",
     "babel-plugin-istanbul": "^6.1.1",
     "babel-plugin-jest-hoist": "^29.5.0",
     "babel-plugin-polyfill-corejs2": "^0.3.3",
@@ -64,6 +47,7 @@
     "cachedir": "^2.3.0",
     "callsites": "^3.1.0",
     "camelcase": "^5.3.1",
+    "caniuse-lite": "^1.0.30001522",
     "caseless": "^0.12.0",
     "chalk": "^2.4.2",
     "char-regex": "^1.0.2",
@@ -95,6 +79,7 @@
     "css-tree": "^1.1.3",
     "css-what": "^6.1.0",
     "csso": "^4.2.0",
+    "cypress": "^12.8.1",
     "dashdash": "^1.14.1",
     "dayjs": "^1.11.6",
     "debug": "^4.3.4",
@@ -187,6 +172,7 @@
     "istanbul-lib-report": "^3.0.0",
     "istanbul-lib-source-maps": "^4.0.1",
     "istanbul-reports": "^3.1.5",
+    "jest": "^29.5.0",
     "jest-changed-files": "^29.5.0",
     "jest-circus": "^29.5.0",
     "jest-cli": "^29.5.0",
@@ -268,6 +254,7 @@
     "p-locate": "^4.1.0",
     "p-map": "^4.0.0",
     "p-try": "^2.2.0",
+    "parcel": "^2.8.3",
     "parent-module": "^1.0.1",
     "parse-json": "^5.2.0",
     "path-exists": "^4.0.0",
@@ -381,5 +368,11 @@
     "yauzl": "^2.10.0",
     "yocto-queue": "^0.1.0"
   },
-  "main": "cypress.config.js"
+  "devDependencies": {},
+  "scripts": {
+    "start": "parcel index.html",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Valeria Rivero",
+  "license": "ISC"
 }
