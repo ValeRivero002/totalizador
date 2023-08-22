@@ -15,7 +15,7 @@ function bisiesto(a) {
   {
     return "No es bisiesto";
   }
-  return a;
+
 }
 
 export default bisiesto;
