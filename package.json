@@ -212,7 +212,6 @@
     "lazy-ass": "^1.6.0",
     "leven": "^3.1.0",
     "lightningcss": "^1.19.0",
-    "lightningcss-win32-x64-msvc": "^1.19.0",
     "lines-and-columns": "^1.2.4",
     "listr2": "^3.14.0",
     "lmdb": "^2.5.2",
