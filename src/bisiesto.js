@@ -3,6 +3,10 @@ function bisiesto(a) {
   {
     return "es bisiesto";
   }
+  if((a%100==0)&&(a%400!=0))
+  {
+    return "No es bisiesto";
+  }
   return a;
 }
 
