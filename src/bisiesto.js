@@ -3,7 +3,19 @@ function bisiesto(a) {
   {
     return "es bisiesto";
   }
-  return a;
+  if((a%100==0)&&(a%400!=0))
+  {
+    return "No es bisiesto";
+  }
+  if((a%4==0)&&(a%100!=0))
+  {
+    return "es bisiesto";
+  }
+  if((a%4!=0))
+  {
+    return "No es bisiesto";
+  }
+
 }
 
 export default bisiesto;
