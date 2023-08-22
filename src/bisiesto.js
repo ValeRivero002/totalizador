@@ -11,6 +11,10 @@ function bisiesto(a) {
   {
     return "es bisiesto";
   }
+  if((a%4!=0))
+  {
+    return "No es bisiesto";
+  }
   return a;
 }
 
