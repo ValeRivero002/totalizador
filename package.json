@@ -370,7 +370,11 @@
   "devDependencies": {},
   "scripts": {
     "start": "parcel index.html",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "parcel build index.html",
+    "test": "jest --watch",
+    "test-once": "jest --verbose --coverage",
+    "cypress": "cypress open",
+    "cypress-run": "cypress run"
   },
   "author": "Valeria Rivero",
   "license": "ISC"
