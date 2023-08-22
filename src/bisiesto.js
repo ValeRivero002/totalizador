@@ -7,6 +7,10 @@ function bisiesto(a) {
   {
     return "No es bisiesto";
   }
+  if((a%4==0)&&(a%100!=0))
+  {
+    return "es bisiesto";
+  }
   return a;
 }
 
