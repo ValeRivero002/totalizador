@@ -1,5 +1,5 @@
 function bisiesto(a) {
-  if(a==400)
+  if(a%400==0)
   {
     return "es bisiesto";
   }
