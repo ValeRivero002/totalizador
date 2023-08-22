@@ -64,7 +64,6 @@
     "cachedir": "^2.3.0",
     "callsites": "^3.1.0",
     "camelcase": "^5.3.1",
-    "caniuse-lite": "^1.0.30001416",
     "caseless": "^0.12.0",
     "chalk": "^2.4.2",
     "char-regex": "^1.0.2",
@@ -381,5 +380,6 @@
     "yargs-parser": "^21.1.1",
     "yauzl": "^2.10.0",
     "yocto-queue": "^0.1.0"
-  }
+  },
+  "main": "cypress.config.js"
 }
