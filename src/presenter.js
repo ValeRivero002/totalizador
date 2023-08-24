@@ -1,4 +1,4 @@
-import bisiesto from "./bisiesto";
+import totalizador from "./totalizador";
 
 const first = document.querySelector("#primer-numero");
 const form = document.querySelector("#anio-form");
@@ -7,7 +7,7 @@ const div = document.querySelector("#resultado-div");
 form.addEventListener("submit", (event) => {
   event.preventDefault();
 
-  const firstNumber = first.value;
+  const firstNumber = Number.parseInt(first.value);
 
-  div.innerHTML = "<p>" + bisiesto(firstNumber) + "</p>";
+  div.innerHTML = "<p>" + totalizador(firstNumber) + "</p>";
 });
