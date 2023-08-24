@@ -5,7 +5,7 @@ describe("Totalizador", () => {
     expect(bisiesto(3)).toEqual(3);
   });*/
   it("deberia imprimir la cantidad de items", () => {
-    expect(bisiesto(1)).toEqual("1");
+    expect(totalizador(1)).toEqual(1);
   });
  
 });

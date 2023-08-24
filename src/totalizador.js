@@ -1,6 +1,8 @@
 function totalizador(a) { 
- return a;
+ return a
 }
 
 export default totalizador;
+
+
 
