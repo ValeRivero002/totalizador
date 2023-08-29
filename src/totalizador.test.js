@@ -16,5 +16,8 @@ describe("Totalizador", () => {
   it("deberia imprimir el porcentaje de decuento cuando es mayor o igual a 7000", () => {
     expect(descuento(7000)).toEqual(0.07);
   });
+  it("deberia imprimir el porcentaje de decuento cuando es mayor o igual a 7000", () => {
+    expect(descuento(10000)).toEqual(0.10);
+  });
  
 });

@@ -49,8 +49,8 @@ form.addEventListener("submit", (event) => {
   const impuesto = multiplicar(precioNeto, taxPercentage / 100);
   const precioTotalConImpuesto = sumar(precioNeto, impuesto);
 
-  const porcentajeDescuento = descuento(precioTotalConImpuesto);
-  const descuentoAplicado = multiplicar(precioTotalConImpuesto, porcentajeDescuento / 100);
+  const porcentajeDescuento = descuento(precioNeto);
+  const descuentoAplicado = multiplicar(precioNeto, porcentajeDescuento / 100);
 
   const precioTotalConDescuento = sumar(precioTotalConImpuesto, -descuentoAplicado);
 
