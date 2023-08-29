@@ -1,6 +1,4 @@
-
-import totalizador from "./totalizador";
-
+import { totalizador, multiplicar } from "./totalizador";
 const first = document.querySelector("#primer-numero");
 const second = document.querySelector("#segundo-numero");
 const form = document.querySelector("#anio-form");
@@ -9,6 +7,7 @@ const div2 = document.querySelector("#resultado2-div");
 const optionsSelect = document.getElementById("options");
 const optionsContainer = document.getElementById("options-container");
 const resultadoDiv = document.getElementById("resultado3-div");
+const div4 = document.getElementById("resultado4-div");
 
 function scrollToOption(optionValue) {
   const optionElement = document.querySelector(`option[value="${optionValue}"]`);
@@ -23,9 +22,10 @@ form.addEventListener("submit", (event) => {
   const secondNumber = Number.parseInt(second.value);
   const selectedOption = optionsSelect.value;
   const selectedOptionText = scrollToOption(selectedOption);
-
+  const precioNeto = multiplicar(firstNumber, secondNumber);
   div2.innerHTML = "<p>" + "Estado: " + selectedOptionText + "</p>";
   div.innerHTML = "<p>" + "Cantidad por Item: " + totalizador(firstNumber) + " - Precio por Item: " + totalizador(secondNumber) + "</p>";
+  div4.innerHTML = "<p>" + "Precio Neto: " + totalizador(precioNeto) + "</p>";
 });
 
 optionsSelect.addEventListener("change", function () {
@@ -51,4 +51,5 @@ optionsSelect.addEventListener("change", function () {
   }
 
   resultadoDiv.textContent = `El estado seleccionado tiene un impuesto del ${taxPercentage}%`;
+  
 });
