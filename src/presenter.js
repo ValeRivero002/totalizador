@@ -13,6 +13,7 @@ const div5 = document.getElementById("resultado5-div");
 const div6 = document.getElementById("resultado6-div");
 const div7 = document.getElementById("resultado7-div");
 const div8 = document.getElementById("resultado8-div");
+const div9 = document.getElementById("resultado9-div");
 
 function scrollToOption(optionValue) {
   const optionElement = document.querySelector(`option[value="${optionValue}"]`);
@@ -32,6 +33,7 @@ form.addEventListener("submit", (event) => {
   const impuestoTX = multiplicar(precioNeto, 0.0625)
   const impuestoAL = multiplicar(precioNeto, 0.04)
   const impuestoNV = multiplicar(precioNeto, 0.08)
+  const impuestoUT = multiplicar(precioNeto, 0.0665)
   const precioTotalConImpuesto = precioNeto + impuestoCA;
 
   div2.innerHTML = "<p>" + "Estado: " + selectedOptionText + "</p>";
@@ -41,6 +43,7 @@ form.addEventListener("submit", (event) => {
   div6.innerHTML = "<p>" + "Precio Total con Impuesto (TX): " + totalizador(impuestoTX) + "</p>";
   div7.innerHTML = "<p>" + "Precio Total con Impuesto (AL): " + totalizador(impuestoAL) + "</p>";
   div8.innerHTML = "<p>" + "Precio Total con Impuesto (NV): " + totalizador(impuestoNV) + "</p>";
+  div9.innerHTML = "<p>" + "Precio Total con Impuesto (UT): " + totalizador(impuestoUT) + "</p>";
 });
 
 optionsSelect.addEventListener("change", function () {
