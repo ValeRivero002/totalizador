@@ -1,4 +1,5 @@
 import { totalizador, multiplicar } from "./totalizador";
+
 const first = document.querySelector("#primer-numero");
 const second = document.querySelector("#segundo-numero");
 const form = document.querySelector("#anio-form");
@@ -23,9 +24,13 @@ form.addEventListener("submit", (event) => {
   const selectedOption = optionsSelect.value;
   const selectedOptionText = scrollToOption(selectedOption);
   const precioNeto = multiplicar(firstNumber, secondNumber);
+  const impuestoCA = multiplicar(precioNeto, 0.0825); // 8.25% de impuesto en CA
+  const precioTotalConImpuesto = precioNeto + impuestoCA;
+
   div2.innerHTML = "<p>" + "Estado: " + selectedOptionText + "</p>";
   div.innerHTML = "<p>" + "Cantidad por Item: " + totalizador(firstNumber) + " - Precio por Item: " + totalizador(secondNumber) + "</p>";
   div4.innerHTML = "<p>" + "Precio Neto: " + totalizador(precioNeto) + "</p>";
+  resultadoDiv.innerHTML = "<p>" + "Precio Total con Impuesto (CA): " + totalizador(impuestoCA) + "</p>";
 });
 
 optionsSelect.addEventListener("change", function () {
@@ -51,5 +56,4 @@ optionsSelect.addEventListener("change", function () {
   }
 
   resultadoDiv.textContent = `El estado seleccionado tiene un impuesto del ${taxPercentage}%`;
-  
 });
