@@ -1,4 +1,4 @@
-import { totalizador, multiplicar } from "./totalizador";
+import { totalizador, multiplicar,sumar } from "./totalizador";
 
 const first = document.querySelector("#primer-numero");
 const second = document.querySelector("#segundo-numero");
@@ -34,16 +34,18 @@ form.addEventListener("submit", (event) => {
   const impuestoAL = multiplicar(precioNeto, 0.04)
   const impuestoNV = multiplicar(precioNeto, 0.08)
   const impuestoUT = multiplicar(precioNeto, 0.0665)
-  const precioTotalConImpuesto = precioNeto + impuestoCA;
-
+  const precioTotalConImpuestoTX = sumar(precioNeto , impuestoTX);
+  const precioTotalConImpuestoAL = sumar(precioNeto , impuestoAL);
+  const precioTotalConImpuestoUT = sumar(precioNeto , impuestoUT);
+ 
   div2.innerHTML = "<p>" + "Estado: " + selectedOptionText + "</p>";
   div.innerHTML = "<p>" + "Cantidad por Item: " + totalizador(firstNumber) + " - Precio por Item: " + totalizador(secondNumber) + "</p>";
   div4.innerHTML = "<p>" + "Precio Neto: " + totalizador(precioNeto) + "</p>";
-  div5.innerHTML = "<p>" + "Precio Total con Impuesto (CA): " + totalizador(impuestoCA) + "</p>";
-  div6.innerHTML = "<p>" + "Precio Total con Impuesto (TX): " + totalizador(impuestoTX) + "</p>";
-  div7.innerHTML = "<p>" + "Precio Total con Impuesto (AL): " + totalizador(impuestoAL) + "</p>";
-  div8.innerHTML = "<p>" + "Precio Total con Impuesto (NV): " + totalizador(impuestoNV) + "</p>";
-  div9.innerHTML = "<p>" + "Precio Total con Impuesto (UT): " + totalizador(impuestoUT) + "</p>";
+  div5.innerHTML = "<p>" + "Precio Total del Impuesto (CA): " + totalizador(impuestoCA) + "</p>";
+  div6.innerHTML = "<p>" + "Precio Total con Impuesto (TX): " + totalizador(precioTotalConImpuestoTX) + "</p>";
+  div7.innerHTML = "<p>" + "Precio Total con Impuesto (AL): " + totalizador(precioTotalConImpuestoAL) + "</p>";
+  div8.innerHTML = "<p>" + "Precio Total del Impuesto (NV): " + totalizador(impuestoNV) + "</p>";
+  div9.innerHTML = "<p>" + "Precio Total con Impuesto (UT): " + totalizador(precioTotalConImpuestoUT) + "</p>";
 });
 
 optionsSelect.addEventListener("change", function () {
