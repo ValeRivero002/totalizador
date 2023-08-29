@@ -58,6 +58,6 @@ form.addEventListener("submit", (event) => {
   div.innerHTML = "<p>" + "Cantidad por Item: " + totalizador(firstNumber) + " - Precio por Item: " + totalizador(secondNumber) + "</p>";
   div3.innerHTML = "<p>" + "Precio Neto (" + firstNumber  + "* $"+ secondNumber+"): " + totalizador(precioNeto) + "</p>";
   div4.innerHTML = "<p>" + "Impuesto (" + taxPercentage + "): " + totalizador(impuesto) + "</p>";
-  div5.innerHTML = "<p>" + "Descuento (%): " + totalizador(multiplicar(porcentajeDescuento,100))  + "</p>";
+  div5.innerHTML = "<p>" + "Descuento ( "+ totalizador(multiplicar(porcentajeDescuento,100))  +"%): " + totalizador(descuentoAplicado)  + "</p>";
   div6.innerHTML = "<p>" + "Precio Total (descuento e impuesto): " + totalizador(precioTotalConDescuento) + "</p>";
 });

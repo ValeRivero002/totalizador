@@ -17,6 +17,10 @@ export function totalizador(a) {
     {
         return 0.05;
     }
+    if(a>=7000 && a<10000)
+    {
+        return 0.07;
+    }
     else
     {
         return 0;
