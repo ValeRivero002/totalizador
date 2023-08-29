@@ -9,6 +9,10 @@ const optionsSelect = document.getElementById("options");
 const optionsContainer = document.getElementById("options-container");
 const resultadoDiv = document.getElementById("resultado3-div");
 const div4 = document.getElementById("resultado4-div");
+const div5 = document.getElementById("resultado5-div");
+const div6 = document.getElementById("resultado6-div");
+const div7 = document.getElementById("resultado7-div");
+const div8 = document.getElementById("resultado8-div");
 
 function scrollToOption(optionValue) {
   const optionElement = document.querySelector(`option[value="${optionValue}"]`);
@@ -25,12 +29,16 @@ form.addEventListener("submit", (event) => {
   const selectedOptionText = scrollToOption(selectedOption);
   const precioNeto = multiplicar(firstNumber, secondNumber);
   const impuestoCA = multiplicar(precioNeto, 0.0825); // 8.25% de impuesto en CA
+  const impuestoTX = multiplicar(precioNeto, 0.0625)
+  //const impuestoAL = multiplicar(precioNeto, 0.04)
   const precioTotalConImpuesto = precioNeto + impuestoCA;
 
   div2.innerHTML = "<p>" + "Estado: " + selectedOptionText + "</p>";
   div.innerHTML = "<p>" + "Cantidad por Item: " + totalizador(firstNumber) + " - Precio por Item: " + totalizador(secondNumber) + "</p>";
   div4.innerHTML = "<p>" + "Precio Neto: " + totalizador(precioNeto) + "</p>";
-  resultadoDiv.innerHTML = "<p>" + "Precio Total con Impuesto (CA): " + totalizador(impuestoCA) + "</p>";
+  div5.innerHTML = "<p>" + "Precio Total con Impuesto (CA): " + totalizador(impuestoCA) + "</p>";
+  div6.innerHTML = "<p>" + "Precio Total con Impuesto (TX): " + totalizador(impuestoTX) + "</p>";
+  //div7.innerHTML = "<p>" + "Precio Total con Impuesto (TX): " + totalizador(impuestoAL) + "</p>";
 });
 
 optionsSelect.addEventListener("change", function () {
