@@ -30,7 +30,7 @@ form.addEventListener("submit", (event) => {
   const precioNeto = multiplicar(firstNumber, secondNumber);
   const impuestoCA = multiplicar(precioNeto, 0.0825); // 8.25% de impuesto en CA
   const impuestoTX = multiplicar(precioNeto, 0.0625)
-  //const impuestoAL = multiplicar(precioNeto, 0.04)
+  const impuestoAL = multiplicar(precioNeto, 0.04)
   const precioTotalConImpuesto = precioNeto + impuestoCA;
 
   div2.innerHTML = "<p>" + "Estado: " + selectedOptionText + "</p>";
@@ -38,7 +38,7 @@ form.addEventListener("submit", (event) => {
   div4.innerHTML = "<p>" + "Precio Neto: " + totalizador(precioNeto) + "</p>";
   div5.innerHTML = "<p>" + "Precio Total con Impuesto (CA): " + totalizador(impuestoCA) + "</p>";
   div6.innerHTML = "<p>" + "Precio Total con Impuesto (TX): " + totalizador(impuestoTX) + "</p>";
-  //div7.innerHTML = "<p>" + "Precio Total con Impuesto (TX): " + totalizador(impuestoAL) + "</p>";
+  div7.innerHTML = "<p>" + "Precio Total con Impuesto (AL): " + totalizador(impuestoAL) + "</p>";
 });
 
 optionsSelect.addEventListener("change", function () {
