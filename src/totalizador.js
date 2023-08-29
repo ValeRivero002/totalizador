@@ -25,6 +25,10 @@ export function totalizador(a) {
     {
         return 0.10;
     }
+    if(a>=30000)
+    {
+        return 0.15;
+    }
     else
     {
         return 0;
