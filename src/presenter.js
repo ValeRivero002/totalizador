@@ -1,4 +1,4 @@
-import { totalizador, multiplicar } from "./totalizador";
+import { totalizador, multiplicar, sumar, descuento } from "./totalizador";
 
 const first = document.querySelector("#primer-numero");
 const second = document.querySelector("#segundo-numero");
@@ -10,6 +10,7 @@ const optionsContainer = document.getElementById("options-container");
 const div3 = document.getElementById("resultado3-div");
 const div4 = document.getElementById("resultado4-div");
 const div5 = document.getElementById("resultado5-div");
+const div6 = document.getElementById("resultado6-div");
 
 function scrollToOption(optionValue) {
   const optionElement = document.querySelector(`option[value="${optionValue}"]`);
@@ -45,16 +46,18 @@ form.addEventListener("submit", (event) => {
       break;
   }
 
-  const impuesto = multiplicar(precioNeto, taxPercentage / 100); 
-  const precioTotalConImpuesto = sumar(precioNeto , impuesto);
- 
+  const impuesto = multiplicar(precioNeto, taxPercentage / 100);
+  const precioTotalConImpuesto = sumar(precioNeto, impuesto);
 
-  
+  const porcentajeDescuento = descuento(precioTotalConImpuesto);
+  const descuentoAplicado = multiplicar(precioTotalConImpuesto, porcentajeDescuento / 100);
+
+  const precioTotalConDescuento = sumar(precioTotalConImpuesto, -descuentoAplicado);
 
   div2.innerHTML = "<p>" + "Estado: " + selectedOptionText + "</p>";
   div.innerHTML = "<p>" + "Cantidad por Item: " + totalizador(firstNumber) + " - Precio por Item: " + totalizador(secondNumber) + "</p>";
   div3.innerHTML = "<p>" + "Precio Neto (" + firstNumber  + "* $"+ secondNumber+"): " + totalizador(precioNeto) + "</p>";
   div4.innerHTML = "<p>" + "Impuesto (" + taxPercentage + "): " + totalizador(impuesto) + "</p>";
-  div5.innerHTML = "<p>" + "Precio Total con Impuesto (" + impuesto + "): " + totalizador(precioTotalConImpuesto) + "</p>";
-
+  div5.innerHTML = "<p>" + "Descuento (%): " + totalizador(multiplicar(porcentajeDescuento,100))  + "</p>";
+  div6.innerHTML = "<p>" + "Precio Total (descuento e impuesto): " + totalizador(precioTotalConDescuento) + "</p>";
 });

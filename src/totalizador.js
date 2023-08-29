@@ -13,5 +13,9 @@ export function totalizador(a) {
     {
         return 0.03;
     }
+    else
+    {
+        return 0;
+    }
   }
   
